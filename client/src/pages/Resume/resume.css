@@ -1,0 +1,16 @@
+.resume-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0d3b66, #00a8cc);
+}
+
+.resume-iframe {
+    width: 60%;
+    height: 80vh;
+    border: none;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top:20px;
+}

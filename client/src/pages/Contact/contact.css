@@ -1,0 +1,131 @@
+/* Full-Screen Container */
+.contact-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* 3D Animated Contact Card */
+.contact-card {
+    text-align: left;
+    position: relative;
+    padding: 20px;
+    background: #e5e5e5;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    max-width: 400px;
+    z-index: 2;
+    margin-top: 60px;
+    margin-left: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+/* Hover Effect: 3D Pop & Glow */
+.contact-card:hover {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+}
+
+/* Contact Details */
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Contact Icons Styling */
+.contact-icon {
+    font-size: 20px;
+}
+
+/* Specific Icon Colors */
+.email-icon {
+    color: #0091ff; /* Blue */
+}
+
+.phone-icon {
+    color: #34c759; /* Green */
+}
+
+.address-icon {
+    color: #ff3b30; /* Red */
+}
+
+/* Make Email Wrap and Stay Responsive */
+.contact-email {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: #0091ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover Effect for Email */
+.contact-email:hover {
+    text-decoration: underline;
+    color: #0062ff;
+}
+
+/* Title Styling */
+.contact-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Anime Character Styling */
+.anime-character {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    height: 50vh;
+    width: auto;
+    z-index: 1;
+    margin-left: 490px;
+    margin-bottom: 270px;
+}
+/* Social Icons Flexbox for Horizontal Alignment */
+.social-links-container {
+    display: flex;
+    justify-content: start; /* Align items to the left */
+    gap: 20px; /* Space between each social link */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    margin-top: 10px;
+}
+
+/* Individual Social Link Styling */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Social Icons - Increased Size */
+.social-icon {
+    font-size: 16px; /* Increase icon size */
+}
+
+/* Specific Social Link Colors with Light Background on Hover */
+.social-link.linkedin {
+    color: #0077b5;
+}
+
+.social-link.github {
+    color: #333;
+}
+
+.social-link.twitter {
+    color: #000;
+}
+
