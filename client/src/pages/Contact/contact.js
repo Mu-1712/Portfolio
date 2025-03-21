@@ -1,55 +1,90 @@
 import React from 'react';
-import './contact.css'; // Import the CSS file
-import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa'; // Import Icons
-import { FaXTwitter } from "react-icons/fa6"; // Import X (Twitter) Icon
+import './contact.css';
+import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
+
+  const handleEmailClick = () => {
+    console.log("Email clicked"); // Debugging
+    window.location.href = "mailto:md.musharaf0305@gmail.com";
+  };
+
+  const handlePhoneClick = () => {
+    console.log("Phone clicked"); // Debugging
+    window.location.href = "tel:+919573651278";
+  };
+
+  const openLink = (url) => {
+    console.log("Social link clicked:", url); // Debugging
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="contact-container">
-      {/* Contact Card */}
       <div className="contact-card">
         <h1 className="contact-title">Let's Connect</h1>
 
-        <p>
-          <FaUser style={{ color: '#FF5733' }} /> <strong> Muhammad Musharraf</strong>
-        </p>
+        <div className="contact-detail">
+          <FaUser className="contact-icon user-icon" style={{ color: '#0b090a' }} />
+          <strong>Muhammad Musharraf</strong>
+        </div>
 
-        <p>
-          <FaEnvelope style={{ color: '#3498db' }} />  
-          <a href="mailto:md.musharaf0305@gmail.com" className="contact-email">
+        <div className="contact-detail">
+          <FaEnvelope className="contact-icon email-icon" style={{ color: '#800e13' }} />
+          <button 
+            onClick={handleEmailClick} 
+            className="contact-email clickable"
+            title="Click to send an email"
+          >
             md.musharaf0305@gmail.com
-          </a>
-        </p>
+          </button>
+        </div>
 
-        <p>
-          <FaPhone style={{ color: '#27ae60' }} /> +91-9573651278
-        </p>
+        <div className="contact-detail">
+          <FaPhone className="contact-icon phone-icon" style={{ color: '#03045e' }} />
+          <button 
+            onClick={handlePhoneClick} 
+            className="contact-phone clickable"
+            title="Click to call"
+          >
+            +91-9573651278
+          </button>
+        </div>
 
-        <p>
-          <FaMapMarkerAlt style={{ color: '#e74c3c' }} /> Guntur, Andhra Pradesh, India
-        </p>
+        <div className="contact-detail">
+          <FaMapMarkerAlt className="contact-icon address-icon" style={{ color: '#d10000' }} />
+          <span>Guntur, Andhra Pradesh, India</span>
+        </div>
 
-        {/* Social Media Links */}
         <div className="social-media">
-  <h2>🌐 Connect with Me</h2>
-  <div className="social-links-container">
-    <a href="https://www.linkedin.com/in/muhammad-musharraf-374940212/" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-      <FaLinkedin className="social-icon" /> LinkedIn
-    </a>
-    <a href="https://github.com/Mu-1712?tab=repositories" target="_blank" rel="noopener noreferrer" className="social-link github">
-      <FaGithub className="social-icon" /> GitHub
-    </a>
-    <a href="https://x.com/Musharaf_12" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-      <FaXTwitter className="social-icon" /> X
-    </a>
-  </div>
-</div>
+          <h2>🌐 Follow Me On</h2>
+          <div className="social-links-container">
+            <button 
+              onClick={() => openLink("https://www.linkedin.com/in/muhammad-musharraf-374940212/")} 
+              className="social-link linkedin clickable"
+              title="Go to LinkedIn"
+            >
+              <FaLinkedin className="social-icon" style={{ color: '#03045e' }} /> LinkedIn
+            </button>
+            <button 
+              onClick={() => openLink("https://github.com/Mu-1712?tab=repositories")} 
+              className="social-link github clickable"
+              title="Go to GitHub"
+            >
+              <FaGithub className="social-icon" style={{ color: '#000000' }} /> GitHub
+            </button>
+            <button 
+              onClick={() => openLink("https://x.com/Musharaf_12")} 
+              className="social-link twitter clickable"
+              title="Go to X (Twitter)"
+            >
+              <FaXTwitter className="social-icon" style={{ color: '#000000' }} /> X
+            </button>
+          </div>
+        </div>
 
-        
       </div>
-
-      {/* Anime Character */}
-      <img src="/Redgoku.png" alt="Anime Character" className="anime-character" />
     </div>
   );
 };

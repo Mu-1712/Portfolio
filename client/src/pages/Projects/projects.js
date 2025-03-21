@@ -7,15 +7,15 @@ const experiences = [
     role: "Jr. Developer",
     projects: [
       {
-        title: "SuperId",
-        description: "Description of Project 1",
-        technologies: ["React", "Node.js", "MongoDB"],
-        status: "Completed",
+        title: "Project: SuperId",
+        description: "SuperId is a platform designed to provide data security for onboarded and collaborating users and organizations. Leveraging our custom blockchain technology, By integrating advanced blockchain protocols, we offer a secure environment where sensitive information is safeguarded against unauthorized access, ensuring that your data remains confidential and tamper-proof, eliminating the risk of data leakage.SuperId is not just a platform; it's a comprehensive solution for organizations that prioritize data integrity and security in an increasingly digital world.",
+        technologies: ["BlockChain", "Custom BlockChain"],
+        status: "In Progress",
       },
       {
-        title: "Trip Recharge",
-        description: "Description of Project 2",
-        technologies: ["Next.js", "GraphQL"],
+        title: "Project: TripRecharge",
+        description: "TripRecharge is a B2B application that brings together travel agents and various airlines onto a single, unified platform. By eliminating intermediaries, Trip facilitates direct and efficient communication between stakeholders, enhancing operational efficiency and reducing costs. Our platform is powered by blockchain technology, ensuring that all transactions and communications are secure, transparent, and immutable. Trip is designed to revolutionize the travel industry by providing a seamless, secure, and intermediary-free environment for business interactions, ultimately driving better collaboration and profitability for all parties involved.",
+        technologies: ["React.Native","Node.js","BlockChain"],
         status: "In Progress",
       },
     ],
@@ -25,7 +25,7 @@ const experiences = [
     role: "Data Analyst",
     projects: [
       {
-        title: "Inventory Management System",
+        title: "Project: Inventory Management System",
         description: [
           "Performed inventory analysis to streamline supply chain functions for a multi-warehouse organization.",
           "Utilized Talend for data integration, MySQL for database management, and Power BI for visualization.",

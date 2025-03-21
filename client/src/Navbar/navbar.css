@@ -1,31 +1,271 @@
-/* Navbar.css */
+/* Navbar Base Styles with Glassmorphism for Desktop and Tablets */
 .custom-navbar {
-    background: #1a365d;
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  background: rgba(26, 54, 93, 0.8); /* More opaque for better visibility */
+  backdrop-filter: blur(15px); /* Increased blur for a stronger glass effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+}
+
+/* Logo */
+.custom-navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect for Logo */
+.custom-navbar .navbar-brand:hover {
+  color: #63b3ed !important;
+  text-shadow: 0 0 15px rgba(99, 179, 237, 0.8); /* Stronger glow effect */
+}
+
+/* Desktop & Tablet: Show Full Quote */
+.responsive-quote {
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  font-family: 'Times New Roman';
+  font-size: 1.2rem;
+}
+
+/* Mobile: Show "Codezenic" on the Left */
+.mobile-title {
+  font-family: 'Times New Roman';
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: none; /* Hidden by default */
+  opacity: 1;
+  position: absolute;
+  left: 20px;
+  top: 15px; /* Ensure it stays at the top */
+  z-index: 1100; /* Keep it above the menu */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: auto; /* Align to the top-right corner */
+  width: 200px; /* Fixed width for the dropdown */
+  background: rgba(26, 54, 93, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(15px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Below mobile-title */
+  font-family: 'Times New Roman';
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+/* Navbar Links */
+.custom-navbar .nav-link {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  color: #ffffff !important;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Smooth Underline Hover Effect */
+.custom-navbar .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #63b3ed;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.custom-navbar .nav-link:hover {
+  color: #63b3ed !important;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Button (Hamburger) */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  right: 20px; /* Aligns menu toggle to the right */
+  z-index: 1200; /* Ensure it's always clickable */
+}
+
+/* Mobile Menu Button Animation */
+.menu-toggle.active {
+  transform: rotate(90deg);
+}
+
+/* Desktop Navigation Links */
+.desktop-nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Tablets */
+  .responsive-quote {
+    font-size: 0.9rem;
+    max-width: 40%;
   }
-  
-  .custom-navbar .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff !important;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+
+  .mobile-title {
+    display: none; /* Hide on tablets */
   }
-  
-  .custom-navbar .nav-link {
-    font-size: 1.1rem;
-    padding: 10px 15px;
-    color: #ffffff !important;
+
+  .desktop-nav-links {
+    display: none; /* Hide desktop links on tablets */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile Devices */
+  .custom-navbar {
+    background: #1a365d; /* Solid background for mobile */
+    backdrop-filter: none; /* Remove blur for mobile */
+    -webkit-backdrop-filter: none; /* Remove blur for mobile */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Simpler shadow for mobile */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px; /* Align to the top-right corner */
+    width: 200px; /* Fixed width for the dropdown */
+    background: #1a365d; /* Solid background for mobile */
+    backdrop-filter: none; /* Remove blur for mobile */
+    -webkit-backdrop-filter: none; /* Remove blur for mobile */
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
     transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Below mobile-title */
   }
-  
-  .custom-navbar .nav-link:hover {
-    color: #63b3ed !important;
-    transform: translateY(-2px);
+
+  .nav-links.active {
+    display: flex;
   }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .custom-navbar .nav-link {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
+  /* Hide quote on mobile */
+  .responsive-quote {
+    opacity: 0;
+  }
+
+  /* Ensure "Codezenic" stays fixed in place */
+  .mobile-title {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1100;
+  }
+
+  .desktop-nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+}
+
+@media (max-width: 480px) { /* Small Phones */
+  .mobile-title {
+    font-size: 1rem;
+  }
+}
+
+/* Additional Styles for Mobile Nav Links When Expanded */
+.nav-links.active .nav-link {
+  padding: 12px 15px; /* Slightly larger padding for better touch interaction */
+  font-size: 1.2rem; /* Consistent font size */
+  color: #ffffff !important; /* Ensure text color is white */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  margin: 5px 0; /* Spacing between links */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover Effect for Mobile Nav Links */
+.nav-links.active .nav-link:hover {
+  background-color: rgba(99, 179, 237, 0.1); /* Light background on hover */
+  color: #63b3ed !important; /* Change text color on hover */
+}
+
+/* Active/Clicked Effect for Mobile Nav Links */
+.nav-links.active .nav-link:active {
+  background-color: rgba(99, 179, 237, 0.2); /* Slightly darker background on click */
+}
+
+/* Underline Effect for Mobile Nav Links */
+.nav-links.active .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #63b3ed;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 5px; /* Adjust position for mobile */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links.active .nav-link:hover::after {
+  width: 100%; /* Full width underline on hover */
+}

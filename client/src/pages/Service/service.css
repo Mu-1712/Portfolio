@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman';
+    background: linear-gradient(135deg, #0d3b66, #00a8cc); 
+    color: #ffffff; /* White text for readability */
+    height: 100vh;
+}
+
+.experience-container { 
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 0;
+    min-height: 80vh; /* Ensure enough space */
+    background: inherit; /* Inherit the body's background */
+    height: 100vh;
+
+}
+
+.title {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 60px 0 20px;
+    color: #ffffff; /* Ensure title text is white */
+    font-family: 'Times New Roman';
+
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.tracking-line {
+    position: absolute;
+    width: 5px;
+    background-color: #007bff; /* Blue tracking line */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Experience Box */
+.experience-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 15px;
+    width: 60%;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Effect */
+.experience-box::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
+    transition: all 0.4s ease-in-out;
+}
+
+.experience-box:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Hover Effect - Simple & Professional */
+.experience-box:hover {
+    transform: scale(1.08); /* Makes the box bigger */
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.4); /* Light border on hover */
+}
+
+/* Company Logo */
+.company-logo {
+    width: 150px;
+    height: 150px; /* Height matches width */
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+/* Experience Details */
+.experience-details {
+    text-align: left;
+}
+
+.experience-details .company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #03045e !important; /* Updated to #8338ec with !important */
+    font-family: 'Times New Roman';
+}
+
+.experience-details .role {
+    font-size: 1.4rem;
+    color: #ffffff; /* Updated to #0d1b2a */
+    font-family: 'Times New Roman';
+}
+
+.experience-details .duration,
+.experience-details .location {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for better visibility */
+    font-family: 'Times New Roman';
+}
+
+/* 💡 Responsive Adjustments */
+@media (max-width: 768px) {
+    /* On smaller screens (phones & small tablets), stack logo above details */
+    .experience-box {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center;
+        width: 75%; /* Reduce width */
+        padding: 10px;
+    }
+
+    /* 🔹 Reduced logo size slightly */
+    .company-logo {
+        width: 150px; 
+        height: 150px;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .experience-details {
+        text-align: center;
+    }
+
+    .company-name {
+        font-size: 1.2rem;
+    }
+
+    .role, .duration, .location {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very small devices, reduce box size further */
+    .experience-box {
+        width: 85%; /* Slightly smaller */
+        padding: 8px;
+    }
+
+    /* 🔹 Further reduce logo size */
+    .company-logo {
+        width: 120px; /* Smaller for compact view */
+        height: 120px;
+        margin-bottom: 0;
+    }
+
+    .company-name {
+        font-size: 1.1rem;
+    }
+
+    .role, .duration, .location {
+        font-size: 0.9rem;
+    }
+}

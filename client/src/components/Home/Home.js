@@ -4,24 +4,35 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-page">
+      {/* Centered Heading */}
       <h1>Hi, I'm Muhammad Musharraf</h1>
 
-      <p class="bio-container">
-        A Passionate <strong>MERN Stack Developer</strong> 
-        I specialize in developing 
-        <strong> scalable, responsive, and user-friendly web applications</strong> that deliver seamless user experiences.
-      </p>
+      {/* Left-Aligned Content for Mobile, Centered for Tablets and Desktops */}
+      <div className="bio-container">
+        <p>
+          A passionate <strong>MERN Stack Developer</strong>.  
+          I specialize in developing  
+          <strong>scalable, responsive, and user-friendly web applications</strong>  
+          that deliver seamless user experiences.
+        </p>
 
-      <p class="bio-container">
-          With a strong grasp of <strong>front-end</strong> and <strong>back-end development</strong>, I enjoy turning ideas into reality with <strong>clean code</strong> and <strong>efficient architectures</strong>. While my expertise is in <strong>web development</strong>, I have <strong>basic knowledge of data analysis</strong> principles and am eager to enhance my skills in <strong>handling, interpreting, and utilizing data</strong> to build more powerful applications. Passionate about <strong>solving complex problems</strong> and creating <strong>impactful digital solutions</strong>, I see challenges as learning opportunities and remain committed to <strong>continuous growth</strong> in both <strong>development</strong> and <strong>data analysis</strong>.
-      </p>
+        <p>
+          With a strong grasp of <strong>front-end</strong> and <strong>back-end development</strong>,  
+          I enjoy turning ideas into reality with <strong>clean code</strong> and <strong>efficient architectures</strong>.  
+          While my expertise lies in <strong>web development</strong>, I have a <strong>basic knowledge of data analysis</strong>  
+          principles and am eager to enhance my skills in <strong>handling, interpreting, and utilizing data</strong>  
+          to build more powerful applications.  
+        </p>
 
-      <p class="mt-3 fs-4">
-  <strong>Let’s collaborate and create something amazing together! 🚀</strong>
-</p>
+        <p className="mt-2 fs-3">
+          <strong>Let’s collaborate and create something amazing together!</strong>
+        </p>
+      </div>
 
-
-      <button className="cta-button">Scroll Down</button>
+      {/* Center-Aligned Button */}
+      <div className="button-container">
+        <button className="cta-button">Download My Resume</button>
+      </div>
     </div>
   );
 };

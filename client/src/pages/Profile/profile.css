@@ -1,0 +1,139 @@
+body, html {
+    background: linear-gradient(135deg, #1a365d, #00a8cc);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    align-items: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+  }
+  
+  .card-subtitle {
+    font-size: 1.0rem;
+    color: #f8f9fa;
+  }
+  
+  .container mt-3 {
+    background: linear-gradient(135deg, #1a365d, #00a8cc);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Flip Card Container */
+  .flip-card {
+    width: 83%; /* Adjusted width to allow for gap */
+    height: 360px; /* Fixed height for uniform size */
+    margin-top: 180px;
+    perspective: 1000px; /* Add perspective for 3D effect */
+    margin-right: 1%; /* Add gap between cards */
+  }
+  
+  /* Ensure the last card doesn't have a margin-right */
+  .flip-card:last-child {
+    margin-right: 0;
+  }
+  
+  /* Flip Card Inner */
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Smooth flip transition */
+  }
+  
+  /* Hover Effect for Flip Card */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip on hover */
+  }
+  
+  /* Flip Card Front and Back */
+  .flip-card-front, 
+  .flip-card-back {
+    width: 100%; /* Adjusted to 100% to fit within the container */
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black; /* Thin black solid border */
+    overflow: hidden;
+  }
+  
+  /* Apply glass-morphism and hover effects ONLY to .flip-card-front */
+  .flip-card-front {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(18px); /* Glass effect */
+    -webkit-backdrop-filter: blur(18px); /* Safari support */
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    font-family: 'Times New Roman';
+    font-size: 1.5rem;
+  }
+  
+  /* Glow Effect for .flip-card-front */
+  .flip-card-front::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
+    transition: all 0.4s ease-in-out;
+    z-index: -1; /* Ensure it stays behind the card content */
+  }
+  
+  /* Hover Effect for .flip-card-front */
+  .flip-card:hover .flip-card-front {
+    transform: scale(1.08); /* Makes the box bigger */
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.4); /* Light border on hover */
+  }
+  
+  .flip-card:hover .flip-card-front::before {
+    top: 0;
+    left: 0;
+  }
+  
+  /* Back card styling (no hover effects) */
+  .flip-card-back {
+    background-color: white; /* White */
+    color: black;
+    transform: rotateY(180deg);
+    font-family: 'Times New Roman';
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) { /* For tablets and desktops */
+    .flip-card {
+      margin-top: 180px; /* Increase spacing */
+    }
+  }
+  
+  @media (max-width: 767px) { /* For mobile screens */
+    .flip-card {
+      width: 100%; /* Full width for single column layout */
+      margin-right: 0; /* Remove margin for single column */
+      margin-top: 80px;
+    }
+  }

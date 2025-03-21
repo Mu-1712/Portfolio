@@ -1,33 +1,65 @@
-/* Full-Screen Container */
+/* Main Contact Container */
 .contact-container {
-    position: relative;
-    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: center; /* Centers the card */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full height */
+    background: linear-gradient(to bottom right, #001f3f, #0074cc); /* Professional gradient */
+    padding: 20px;
+}
+
+/* Glass Effect Card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(18px); /* Glass effect */
+    -webkit-backdrop-filter: blur(18px); /* Safari support */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Fixed width */
+    text-align: center; /* Center text */
+    max-width: 90%; /* Responsive */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
     overflow: hidden;
 }
 
-/* 3D Animated Contact Card */
-.contact-card {
-    text-align: left;
-    position: relative;
-    padding: 20px;
-    background: #e5e5e5;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    max-width: 400px;
-    z-index: 2;
-    margin-top: 60px;
-    margin-left: 30px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    transform-style: preserve-3d;
+/* Glow Effect */
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
+    transition: all 0.4s ease-in-out;
+    z-index: -1; /* Ensure it stays behind the card content */
 }
 
-/* Hover Effect: 3D Pop & Glow */
+.contact-card:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Hover Effect - Simple & Professional */
 .contact-card:hover {
-    transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+    transform: scale(1.08); /* Makes the box bigger */
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.4); /* Light border on hover */
+}
+
+/* Contact Title */
+.contact-title {
+    font-size: 1.8rem;
+    color: #03045e;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family:'Times New Roman';
 }
 
 /* Contact Details */
@@ -35,97 +67,132 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-family: 'Times New Roman';
 }
 
-/* Contact Icons Styling */
+/* Icons */
 .contact-icon {
     font-size: 20px;
 }
 
-/* Specific Icon Colors */
-.email-icon {
-    color: #0091ff; /* Blue */
-}
-
-.phone-icon {
-    color: #34c759; /* Green */
-}
-
-.address-icon {
-    color: #ff3b30; /* Red */
-}
-
-/* Make Email Wrap and Stay Responsive */
-.contact-email {
-    word-break: break-word;
-    overflow-wrap: break-word;
-    color: #0091ff;
+/* Clickable Email & Phone */
+.clickable {
+    cursor: pointer;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
 }
 
-/* Hover Effect for Email */
+.contact-email {
+    color: #ffffff;
+}
+
 .contact-email:hover {
+    color: #800e13;
     text-decoration: underline;
-    color: #0062ff;
 }
 
-/* Title Styling */
-.contact-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+.contact-phone {
+    color: #ffffff;
 }
 
-/* Anime Character Styling */
-.anime-character {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    height: 50vh;
-    width: auto;
-    z-index: 1;
-    margin-left: 490px;
-    margin-bottom: 270px;
+.contact-phone:hover {
+    color: #03045e;
+    text-decoration: underline;
 }
-/* Social Icons Flexbox for Horizontal Alignment */
+
+/* Social Media Section */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media h2 {
+    font-size: 1.6rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman';
+}
+
+/* Social Links */
 .social-links-container {
     display: flex;
-    justify-content: start; /* Align items to the left */
-    gap: 20px; /* Space between each social link */
-    flex-wrap: wrap; /* Ensure responsiveness */
-    margin-top: 10px;
+    flex-direction: column; /* Stack links */
+    align-items: center;
+    gap: 12px;
 }
 
-/* Individual Social Link Styling */
+/* Social Links with their Brand Colors */
 .social-link {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between icon and text */
-    text-decoration: none;
+    gap: 8px;
     font-size: 18px;
     font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
 }
 
-/* Social Icons - Increased Size */
+/* LinkedIn - Blue */
+.linkedin {
+    color: #03045e;
+    font-family: 'Times New Roman';
+    font-size: 1.3rem;
+}
+
+.linkedin:hover {
+    transform: scale(1.1);
+    color: #03045e;
+}
+
+/* GitHub - Black */
+.github {
+    color: #000000;
+    font-family: 'Times New Roman';
+    font-size: 1.3rem;
+}
+
+.github:hover {
+    transform: scale(1.1);
+    color: #000000;
+}
+
+/* Twitter (X) - Black */
+.twitter {
+    color: #000000;
+    font-family: 'Times New Roman';
+    font-size: 1.3rem;
+}
+
+.twitter:hover {
+    transform: scale(1.1);
+    color: #000000;
+}
+
+/* Ensure Icons Don't Block Clicks */
 .social-icon {
-    font-size: 16px; /* Increase icon size */
+    font-size: 22px;
+    /* Removed pointer-events: none; */
 }
 
-/* Specific Social Link Colors with Light Background on Hover */
-.social-link.linkedin {
-    color: #0077b5;
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .contact-card {
+        width: 90%;
+        padding: 20px;
+    }
 }
-
-.social-link.github {
-    color: #333;
-}
-
-.social-link.twitter {
-    color: #000;
-}
-

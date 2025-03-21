@@ -1,51 +1,59 @@
 import { NavLink } from 'react-router-dom';
 import "./navbar.css";
-import React from "react";
-
+import React, { useState } from "react";
 
 const Navbar = () => {
-  console.log("Navbar rendered!"); // Debugging log
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Function to close menu on link click
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
       <div className="container-fluid d-flex justify-content-between align-items-center px-4">
         
-        {/* Developer Quote on the Left */}
-        <span className="navbar-brand text-light fw-bold" style={{ fontSize: "0.9rem", whiteSpace: "nowrap" }}>
-  "Every great ✨feature✨ was once a stubborn😤 bug🐛 refusing🙅‍♂️ to die☠️."
-</span>
+        {/* Full Quote for Desktop & Tablets */}
+        <span className="responsive-quote">
+          "Every great ✨feature✨ was once a stubborn😤 bug🐛 refusing🙅‍♂️ to die☠️."
+        </span>
+
+        {/* "Codezenic" for Mobile View */}
+        <span className="mobile-title"> Great Code Needs Persistence🎯</span>
+
+        {/* Desktop Navigation Links */}
+        <div className="desktop-nav-links">
+          <NavLink className="nav-link" to="/">Home</NavLink>
+          <NavLink className="nav-link" to="/profile">Profile</NavLink>
+          <NavLink className="nav-link" to="/service">Service</NavLink>
+          <NavLink className="nav-link" to="/projects">Projects</NavLink>
+          <NavLink className="nav-link" to="/contact">Contact</NavLink>
+        </div>
 
         {/* Navbar Toggle Button (For Mobile View) */}
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        {/* Navigation Links on the Right */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav d-flex gap-4">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/experience">Experience</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/projects">Projects</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/resume">Resume</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">Contact</NavLink>
-            </li>
-          </ul>
+        {/* Mobile Navigation Links */}
+        <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+          <NavLink className="nav-link" to="/" onClick={closeMenu}>Home</NavLink>
+          <NavLink className="nav-link" to="/profile" onClick={closeMenu}>Profile</NavLink>
+          <NavLink className="nav-link" to="/service" onClick={closeMenu}>Service</NavLink>
+          <NavLink className="nav-link" to="/projects" onClick={closeMenu}>Projects</NavLink>
+          <NavLink className="nav-link" to="/contact" onClick={closeMenu}>Contact</NavLink>
         </div>
       </div>
     </nav>
