@@ -48,7 +48,7 @@
 /* Role */
 .role {
     font-size: 1.5rem;
-    color: #1b263b; 
+    color: #ffffff; 
     font-weight: 600;
     margin-bottom: 15px;
     font-family: 'Times New Roman';
@@ -63,26 +63,24 @@
 
 /* Individual Project Card */
 .project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Glass effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: #ffffff; /* Solid white background for better readability */
     padding: 20px;
     border-radius: 10px;
     width: calc(50% - 10px); /* Default: Two per row */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    color: rgb(255, 255, 255); /* White text for better readability */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    color: #000000; /* Dark text for better readability */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
     font-family: 'Times New Roman';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* Hover Effect */
-.project-card:hover {
+/* .project-card:hover {
     transform: scale(1.05);
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-}
+    background: #f8f9fa; 
+} */
 
 /* Project Status Styles */
 .status {

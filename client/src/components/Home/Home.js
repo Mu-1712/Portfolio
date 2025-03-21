@@ -10,14 +10,7 @@ const Home = () => {
       {/* Left-Aligned Content for Mobile, Centered for Tablets and Desktops */}
       <div className="bio-container">
         <p>
-          A passionate <strong>MERN Stack Developer</strong>.  
-          I specialize in developing  
-          <strong>scalable, responsive, and user-friendly web applications</strong>  
-          that deliver seamless user experiences.
-        </p>
-
-        <p>
-          With a strong grasp of <strong>front-end</strong> and <strong>back-end development</strong>,  
+          A passionate <strong>MERN Stack Developer</strong>. With a strong grasp of <strong>front-end</strong> and <strong>back-end development</strong>,  
           I enjoy turning ideas into reality with <strong>clean code</strong> and <strong>efficient architectures</strong>.  
           While my expertise lies in <strong>web development</strong>, I have a <strong>basic knowledge of data analysis</strong>  
           principles and am eager to enhance my skills in <strong>handling, interpreting, and utilizing data</strong>  

@@ -25,7 +25,7 @@ const Navbar = () => {
         </span>
 
         {/* "Codezenic" for Mobile View */}
-        <span className="mobile-title"> Great Code Needs Persistence🎯</span>
+        <span className="mobile-title"> Small fixes🛠️, big impact🚀. </span>
 
         {/* Desktop Navigation Links */}
         <div className="desktop-nav-links">

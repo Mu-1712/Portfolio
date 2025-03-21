@@ -25,18 +25,9 @@ const Experience = () => {
   return (
     <div className="experience-container">
       <p className="title">
-        <strong>
-          Driven by code, fueled by curiosity and shaped by experience
-        </strong>
-        . Every{" "}
-        <span style={{ color: "yellow" }}>
-          <strong>project</strong> has expanded my <strong>vision</strong>
-        </span>{" "}
-        👨‍💻, and every <strong>position</strong> has helped me{" "}
-        <strong>grow</strong> 🚀. Driven by <strong>innovation</strong> and a
-        passion for <strong>excellence</strong>, I work to bring{" "}
-        <strong>ideas</strong> 💡 to life through meaningful{" "}
-        <strong>digital solutions</strong>.
+        <span style={{ color: "#ffff" }}>
+          <strong>My Journey</strong>
+        </span>
       </p>
 
       {/* Timeline container remains for styling purposes */}

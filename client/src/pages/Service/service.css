@@ -19,12 +19,13 @@ body {
 }
 
 .title {
-    text-align: left;
-    font-size: 1.2rem;
+    text-align: center;
+    font-size: 1.8rem;
     font-weight: normal;
     margin: 60px 0 20px;
     color: #ffffff; /* Ensure title text is white */
     font-family: 'Times New Roman';
+    margin-top: 40px;
 
 }
 
@@ -162,8 +163,8 @@ body {
 
     /* 🔹 Further reduce logo size */
     .company-logo {
-        width: 120px; /* Smaller for compact view */
-        height: 120px;
+        width: 150px; /* Smaller for compact view */
+        height: 150px;
         margin-bottom: 0;
     }
 

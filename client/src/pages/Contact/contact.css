@@ -54,7 +54,7 @@
 
 /* Contact Title */
 .contact-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #03045e;
     margin-bottom: 15px;
     font-weight: bold;
@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #ffffff;
     margin-bottom: 12px;
     font-family: 'Times New Roman';
@@ -116,7 +116,7 @@
 }
 
 .social-media h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #000000;
     margin-bottom: 10px;
     font-family: 'Times New Roman';
@@ -151,7 +151,7 @@
 .linkedin {
     color: #03045e;
     font-family: 'Times New Roman';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .linkedin:hover {
@@ -163,7 +163,7 @@
 .github {
     color: #000000;
     font-family: 'Times New Roman';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .github:hover {
@@ -175,7 +175,7 @@
 .twitter {
     color: #000000;
     font-family: 'Times New Roman';
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .twitter:hover {
