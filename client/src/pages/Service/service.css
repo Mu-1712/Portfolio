@@ -1,23 +1,13 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman';
-    background: linear-gradient(135deg, #0d3b66, #00a8cc); 
-    color: #ffffff; /* White text for readability */
-    height: 100vh;
-}
-
+/* EXPERIENCE CONTAINER */
 .experience-container { 
     position: relative;
-    max-width: 800px;
+    width: 100%; /* Ensure full width */
+    max-width: 1200px; /* Limit max width */
     margin: auto;
     padding: 50px 0;
-    min-height: 80vh; /* Ensure enough space */
-    background: inherit; /* Inherit the body's background */
-    height: 100vh;
-
 }
 
+/* TITLE */
 .title {
     text-align: center;
     font-size: 1.8rem;
@@ -26,10 +16,9 @@ body {
     color: #ffffff; /* Ensure title text is white */
     font-family: 'Times New Roman';
     margin-top: 40px;
-
 }
 
-/* Timeline */
+/* TIMELINE */
 .timeline {
     position: relative;
     display: flex;
@@ -38,6 +27,7 @@ body {
     gap: 30px;
 }
 
+/* TRACKING LINE */
 .tracking-line {
     position: absolute;
     width: 5px;
@@ -48,13 +38,14 @@ body {
     z-index: -1;
 }
 
-/* Experience Box */
+/* EXPERIENCE BOX */
 .experience-box {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
     padding: 15px;
-    width: 60%;
+    width: 80%;
+    height: 200px; /* Ensuring equal height */
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.2); /* Light border */
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
@@ -63,7 +54,7 @@ body {
     overflow: hidden;
 }
 
-/* Glow Effect */
+/* GLOW EFFECT */
 .experience-box::before {
     content: "";
     position: absolute;
@@ -80,65 +71,67 @@ body {
     left: 0;
 }
 
-/* Hover Effect - Simple & Professional */
+/* HOVER EFFECT */
 .experience-box:hover {
-    transform: scale(1.08); /* Makes the box bigger */
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 10px;
-    border-color: rgba(255, 255, 255, 0.4); /* Light border on hover */
+    transform: scale(1.05); /* Slight hover scaling */
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Company Logo */
+/* COMPANY LOGO */
 .company-logo {
-    width: 150px;
-    height: 150px; /* Height matches width */
+    width: 120px;
+    height: 120px; 
     object-fit: contain;
     margin-right: 15px;
 }
 
-/* Experience Details */
+/* EXPERIENCE DETAILS */
 .experience-details {
     text-align: left;
+    flex-grow: 1; /* Take remaining space */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .experience-details .company-name {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #03045e !important; /* Updated to #8338ec with !important */
+    color: #03045e;
     font-family: 'Times New Roman';
 }
 
 .experience-details .role {
-    font-size: 1.4rem;
-    color: #ffffff; /* Updated to #0d1b2a */
+    font-size: 1.3rem;
+    color: #ffffff;
     font-family: 'Times New Roman';
 }
 
 .experience-details .duration,
 .experience-details .location {
-    font-size: 1.2rem;
-    color: #ffffff; /* White text for better visibility */
+    font-size: 1.1rem;
+    color: #ffffff;
     font-family: 'Times New Roman';
 }
 
-/* 💡 Responsive Adjustments */
+/* RESPONSIVE DESIGN */
+
+/* 🌟 MOBILE & TABLET STYLES */
 @media (max-width: 768px) {
-    /* On smaller screens (phones & small tablets), stack logo above details */
     .experience-box {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 75%; /* Reduce width */
+        width: 75%;
+        height: auto; /* Adjust height */
         padding: 10px;
     }
 
-    /* 🔹 Reduced logo size slightly */
     .company-logo {
-        width: 150px; 
-        height: 150px;
-        margin-bottom: 0;
-        margin-right: 0;
+        width: 100px; 
+        height: 100px;
+        margin-bottom: 10px;
     }
 
     .experience-details {
@@ -154,18 +147,15 @@ body {
     }
 }
 
+/* 📱 VERY SMALL DEVICES */
 @media (max-width: 480px) {
-    /* For very small devices, reduce box size further */
     .experience-box {
-        width: 85%; /* Slightly smaller */
-        padding: 8px;
+        width: 90%;
     }
 
-    /* 🔹 Further reduce logo size */
     .company-logo {
-        width: 150px; /* Smaller for compact view */
-        height: 150px;
-        margin-bottom: 0;
+        width: 90px;
+        height: 90px;
     }
 
     .company-name {
@@ -174,5 +164,35 @@ body {
 
     .role, .duration, .location {
         font-size: 0.9rem;
+    }
+}
+
+/* 💻 DESKTOP STYLES - Wide Boxes & Left-Aligned */
+@media (min-width: 1024px) {
+    .timeline {
+        display: flex;
+        flex-direction: row; /* Arrange experience boxes in a row */
+        justify-content: flex-start; /* Align from left */
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .experience-box {
+        width: 45%; /* Wider boxes */
+        max-width: 600px; /* Allow larger boxes */
+        height: 220px; /* Equal height */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .experience-details {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 20px;
     }
 }

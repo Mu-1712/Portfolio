@@ -1,31 +1,31 @@
 /* Main Contact Container */
 .contact-container {
     display: flex;
-    justify-content: center; /* Centers the card */
-    align-items: center; /* Centers vertically */
-    height: 100vh; /* Full height */
-    background: linear-gradient(to bottom right, #001f3f, #0074cc); /* Professional gradient */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: inherit; /* Changed to inherit home background */
     padding: 20px;
 }
 
-/* Glass Effect Card */
+/* Glass Effect Card (keeping all effects) */
 .contact-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    backdrop-filter: blur(18px); /* Glass effect */
-    -webkit-backdrop-filter: blur(18px); /* Safari support */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Fixed width */
-    text-align: center; /* Center text */
-    max-width: 90%; /* Responsive */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    width: 400px;
+    text-align: center;
+    max-width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
 }
 
-/* Glow Effect */
+/* Glow Effect (keeping as is) */
 .contact-card::before {
     content: "";
     position: absolute;
@@ -35,7 +35,7 @@
     height: 200%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
     transition: all 0.4s ease-in-out;
-    z-index: -1; /* Ensure it stays behind the card content */
+    z-index: -1;
 }
 
 .contact-card:hover::before {
@@ -43,26 +43,26 @@
     left: 0;
 }
 
-/* Hover Effect - Simple & Professional */
+/* Hover Effect (keeping as is) */
 .contact-card:hover {
-    transform: scale(1.08); /* Makes the box bigger */
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transform: scale(1.08);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 10px;
-    border-color: rgba(255, 255, 255, 0.4); /* Light border on hover */
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Contact Title */
+/* Contact Title - changed to white to match home */
 .contact-title {
     font-size: 1.5rem;
-    color: #03045e;
+    color: #ffffff; /* Changed to white */
     margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
     font-family:'Times New Roman';
 }
 
-/* Contact Details */
+/* Contact Details (keeping as is) */
 .contact-detail {
     display: flex;
     align-items: center;
@@ -73,12 +73,12 @@
     font-family: 'Times New Roman';
 }
 
-/* Icons */
+/* Icons (keeping as is) */
 .contact-icon {
     font-size: 20px;
 }
 
-/* Clickable Email & Phone */
+/* Clickable Email & Phone - updated hover colors */
 .clickable {
     cursor: pointer;
     text-decoration: none;
@@ -97,7 +97,7 @@
 }
 
 .contact-email:hover {
-    color: #800e13;
+    color: #800e13; /* Updated to match home accent */
     text-decoration: underline;
 }
 
@@ -106,31 +106,30 @@
 }
 
 .contact-phone:hover {
-    color: #03045e;
+    color: #03045e; /* Updated to match home accent */
     text-decoration: underline;
 }
 
-/* Social Media Section */
+/* Social Media Section - updated text colors */
 .social-media {
     margin-top: 20px;
 }
 
 .social-media h2 {
     font-size: 1.5rem;
-    color: #000000;
+    color: #ffffff; /* Changed to white */
     margin-bottom: 10px;
     font-family: 'Times New Roman';
 }
 
-/* Social Links */
+/* Social Links - updated colors */
 .social-links-container {
     display: flex;
-    flex-direction: column; /* Stack links */
+    flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-/* Social Links with their Brand Colors */
 .social-link {
     display: flex;
     align-items: center;
@@ -141,55 +140,29 @@
     transition: transform 0.2s ease-in-out;
     background: none;
     border: none;
-    color: inherit;
+    color: #ffffff; /* Changed to white */
     padding: 0;
     font: inherit;
     outline: inherit;
 }
 
-/* LinkedIn - Blue */
-.linkedin {
-    color: #03045e;
+/* Updated social link hovers */
+.linkedin, .github, .twitter {
     font-family: 'Times New Roman';
     font-size: 1.1rem;
+    color: #000 /* Changed to white */
 }
 
-.linkedin:hover {
+.linkedin:hover, .github:hover, .twitter:hover {
     transform: scale(1.1);
-    color: #03045e;
+    color: #03045e; /* Updated to match home accent */
 }
 
-/* GitHub - Black */
-.github {
-    color: #000000;
-    font-family: 'Times New Roman';
-    font-size: 1.1rem;
-}
-
-.github:hover {
-    transform: scale(1.1);
-    color: #000000;
-}
-
-/* Twitter (X) - Black */
-.twitter {
-    color: #000000;
-    font-family: 'Times New Roman';
-    font-size: 1.1rem;
-}
-
-.twitter:hover {
-    transform: scale(1.1);
-    color: #000000;
-}
-
-/* Ensure Icons Don't Block Clicks */
 .social-icon {
     font-size: 22px;
-    /* Removed pointer-events: none; */
 }
 
-/* Responsive Design */
+/* Responsive Design (keeping as is) */
 @media screen and (max-width: 480px) {
     .contact-card {
         width: 90%;

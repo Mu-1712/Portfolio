@@ -1,5 +1,7 @@
 import React from 'react';
 import './Home.css';
+import BioAndResume from '../../pages/Profile/profile'; // Import the BioAndResume component
+import Experience from '../../pages/Service/service';
 
 const Home = () => {
   return (
@@ -26,6 +28,11 @@ const Home = () => {
       <div className="button-container">
         <button className="cta-button">Download My Resume</button>
       </div>
+
+      {/* Profile and Skills Section */}
+      <BioAndResume />
+
+      <Experience />
     </div>
   );
 };

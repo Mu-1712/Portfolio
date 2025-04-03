@@ -1,10 +1,10 @@
 /* Main Projects Container */
 .projects-container {
     width: 100%;
-    min-height: 100vh;  /* Reduced for better fit on large screens */
+    min-height: 100vh;
     margin: auto;
     padding: 40px;
-    background: linear-gradient(135deg, #0d3b66, #00a8cc);
+    /* background: inherit; */
     border-radius: 12px;
     box-shadow: 0;
     margin-top: 70px;
@@ -26,21 +26,21 @@
 
 /* Company Section */
 .company-section {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Glass effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 25px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Company Name */
 .company-name {
     font-size: 2rem;
     font-weight: bold;
-    color: #03045e; 
+    color: white; /* Changed to white to match home */
     margin-bottom: 10px;
     font-family: 'Times New Roman';
 }
@@ -48,7 +48,7 @@
 /* Role */
 .role {
     font-size: 1.5rem;
-    color: #ffffff; 
+    color: white;
     font-weight: 600;
     margin-bottom: 15px;
     font-family: 'Times New Roman';
@@ -63,24 +63,17 @@
 
 /* Individual Project Card */
 .project-card {
-    background: #ffffff; /* Solid white background for better readability */
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    width: calc(50% - 10px); /* Default: Two per row */
+    width: calc(50% - 10px);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    color: #000000; /* Dark text for better readability */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    color: white; /* Changed to white */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Changed to white border */
     font-family: 'Times New Roman';
     font-size: 1.3rem;
 }
-
-/* Hover Effect */
-/* .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
-    background: #f8f9fa; 
-} */
 
 /* Project Status Styles */
 .status {
@@ -94,7 +87,7 @@
     font-size: 1.2rem;
 }
 
-/* Status Colors */
+/* Status Colors (kept as is for visibility) */
 .completed {
     background-color: #28a745;
     color: white;
@@ -110,8 +103,8 @@
     color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) { /* Tablets */
+/* Responsive Design (unchanged) */
+@media (max-width: 1024px) {
     .projects-container {
         padding: 30px;
     }
@@ -125,7 +118,7 @@
     }
 }
 
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) {
     .projects-container {
         padding: 20px;
     }
@@ -136,7 +129,7 @@
     }
 
     .project-card {
-        width: 100%; /* Full width for single column layout */
+        width: 100%;
     }
 
     .section-title {
