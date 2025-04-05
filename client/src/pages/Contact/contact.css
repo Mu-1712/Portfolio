@@ -1,15 +1,36 @@
-/* Main Contact Container */
-.contact-container {
+/* New wrapper for the entire contact page */
+.contact-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Updated Contact Title with responsive sizing */
+  .contact-title {
+    font-size: 3rem; /* Desktop default */
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Main Contact Container */
+  .contact-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: inherit; /* Changed to inherit home background */
-    padding: 20px;
-}
-
-/* Glass Effect Card (keeping all effects) */
-.contact-card {
+    width: 100%;
+    margin-bottom: -130px;
+  }
+  
+  /* Glass Effect Card */
+  .contact-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -23,10 +44,10 @@
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
-}
-
-/* Glow Effect (keeping as is) */
-.contact-card::before {
+  }
+  
+  /* Glow Effect */
+  .contact-card::before {
     content: "";
     position: absolute;
     top: -100%;
@@ -36,50 +57,40 @@
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
     transition: all 0.4s ease-in-out;
     z-index: -1;
-}
-
-.contact-card:hover::before {
+  }
+  
+  .contact-card:hover::before {
     top: 0;
     left: 0;
-}
-
-/* Hover Effect (keeping as is) */
-.contact-card:hover {
+  }
+  
+  /* Hover Effect */
+  .contact-card:hover {
     transform: scale(1.08);
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 10px;
     border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Contact Title - changed to white to match home */
-.contact-title {
-    font-size: 1.5rem;
-    color: #ffffff; /* Changed to white */
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family:'Times New Roman';
-}
-
-/* Contact Details (keeping as is) */
-.contact-detail {
+  }
+  
+  /* Contact Details */
+  .contact-detail {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1.1rem;
     color: #ffffff;
     margin-bottom: 12px;
-    font-family: 'Times New Roman';
-}
-
-/* Icons (keeping as is) */
-.contact-icon {
+    font-family: 'Times New Roman', serif;
+  }
+  
+  /* Icons */
+  .contact-icon {
     font-size: 20px;
-}
-
-/* Clickable Email & Phone - updated hover colors */
-.clickable {
+  }
+  
+  /* Clickable Email & Phone */
+  .clickable {
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
@@ -90,47 +101,47 @@
     padding: 0;
     font: inherit;
     outline: inherit;
-}
-
-.contact-email {
+  }
+  
+  .contact-email {
     color: #ffffff;
-}
-
-.contact-email:hover {
-    color: #800e13; /* Updated to match home accent */
+  }
+  
+  .contact-email:hover {
+    color: #800e13;
     text-decoration: underline;
-}
-
-.contact-phone {
+  }
+  
+  .contact-phone {
     color: #ffffff;
-}
-
-.contact-phone:hover {
-    color: #03045e; /* Updated to match home accent */
+  }
+  
+  .contact-phone:hover {
+    color: #03045e;
     text-decoration: underline;
-}
-
-/* Social Media Section - updated text colors */
-.social-media {
+  }
+  
+  /* Social Media Section */
+  .social-media {
     margin-top: 20px;
-}
-
-.social-media h2 {
+  }
+  
+  .social-media h2 {
     font-size: 1.5rem;
-    color: #ffffff; /* Changed to white */
+    color: #ffffff;
     margin-bottom: 10px;
-    font-family: 'Times New Roman';
-}
-
-/* Social Links - updated colors */
-.social-links-container {
+    font-family: 'Times New Roman', serif;
+  }
+  
+  /* Social Links */
+  .social-links-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-}
-
-.social-link {
+  }
+  
+  .social-link {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -140,32 +151,100 @@
     transition: transform 0.2s ease-in-out;
     background: none;
     border: none;
-    color: #ffffff; /* Changed to white */
+    color: #ffffff;
     padding: 0;
     font: inherit;
     outline: inherit;
-}
-
-/* Updated social link hovers */
-.linkedin, .github, .twitter {
-    font-family: 'Times New Roman';
+  }
+  
+  .linkedin, .github, .twitter {
+    font-family: 'Times New Roman', serif;
     font-size: 1.1rem;
-    color: #000 /* Changed to white */
-}
-
-.linkedin:hover, .github:hover, .twitter:hover {
+  }
+  
+  .linkedin:hover, .github:hover, .twitter:hover {
     transform: scale(1.1);
-    color: #03045e; /* Updated to match home accent */
-}
-
-.social-icon {
+    color: #03045e;
+  }
+  
+  .social-icon {
     font-size: 22px;
-}
-
-/* Responsive Design (keeping as is) */
-@media screen and (max-width: 480px) {
-    .contact-card {
-        width: 90%;
-        padding: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .contact-title {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
     }
-}
+    .contact-container {
+        margin-bottom: -150px;
+      }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      margin-top: -180px;
+    }
+    
+    .contact-detail {
+      font-size: 1rem;
+    }
+    
+    .social-media h2 {
+      font-size: 1.3rem;
+    }
+    .contact-container {
+        margin-bottom: -150px;
+        margin-top: 20px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-title {
+      font-size: 1.75rem;
+      margin-bottom: 40px;
+      margin-top: 250px;
+    }
+    
+    .contact-card {
+      padding: 20px;
+    }
+    
+    .contact-detail {
+      font-size: 0.95rem;
+    }
+    
+    .social-media h2 {
+      font-size: 1.2rem;
+    }
+    
+    .social-link {
+      font-size: 1rem;
+    }
+    .contact-container {
+        margin-bottom: 10px;
+      }
+  }
+  
+  @media (max-width: 360px) {
+    .contact-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
+    
+    .contact-detail {
+      font-size: 0.9rem;
+    }
+    
+    .social-media h2 {
+      font-size: 1.1rem;
+    }
+    
+    .social-link {
+      font-size: 0.9rem;
+    }
+  }

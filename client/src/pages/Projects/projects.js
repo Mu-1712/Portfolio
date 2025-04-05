@@ -73,30 +73,29 @@ const Projects = () => {
             {exp.projects.map((project, idx) => (
               <div key={idx} className="project-card">
                 <h4>{project.title}</h4>
+                
+                <div className="project-description">
+                  {Array.isArray(project.description) ? (
+                    project.description.map((item, i) => {
+                      if (typeof item === "object" && item.bulletPoints) {
+                        return (
+                          <React.Fragment key={i}>
+                            <ul>
+                              {item.bulletPoints.map((point, j) => (
+                                <li key={j}>{point}</li>
+                              ))}
+                            </ul>
+                          </React.Fragment>
+                        );
+                      }
+                      return <p key={i}>{item}</p>;
+                    })
+                  ) : (
+                    <p>{project.description}</p>
+                  )}
+                </div>
 
-                {/* Check if description is an array */}
-                {Array.isArray(project.description) ? (
-                  project.description.map((item, i) =>
-                    typeof item === "object" && item.bulletPoints ? (
-                      // Render bullet points
-                      <ul key={i}>
-                        {item.bulletPoints.map((point, j) => (
-                          <li key={j}>{point}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      // Render normal text
-                      <p key={i}>{item}</p>
-                    )
-                  )
-                ) : (
-                  // Render description as normal text if it's a string
-                  <p>{project.description}</p>
-                )}
-
-                <p>
-                  <strong>Technologies:</strong> {project.technologies.join(", ")}
-                </p>
+                <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
                 <p className={getStatusClass(project.status)}>
                   <strong>Status:</strong> {project.status}
                 </p>

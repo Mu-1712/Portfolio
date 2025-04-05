@@ -1,186 +1,276 @@
-/* Home Page Container */
-body, html {
-  background: linear-gradient(135deg, #0d3b66, #00a8cc);
-  min-height: 180vh;
+/* ===== BASE STYLES ===== */
+/* Smooth scrolling and consistent sizing */
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Gradient background with subtle animation */
+body {
+  background: linear-gradient(-45deg, #0d3b66, #005f73, #00a8cc, #0d3b66);
+  background-size: 400% 400%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: flex;
-    flex-direction: column;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  line-height: 1.5;
 }
 
+/* ===== HOME PAGE CONTAINER ===== */
 .home-page {
-  flex: 1;  /* Fills remaining space */
-  min-height: 180vh;
-    width: 100%;
-  color: #ffffff;
+  width: 100%;
+  max-width: 1400px;
+  margin: 80px auto 0;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-top: 80px;
-  
-  /* Smooth fade-in animation */
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+/* ===== HEADING STYLES ===== */
+/* Main heading with modern text effect */
+.home-page h1 {
+  font-size: 3rem; /* Default size for desktops */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(to right, #ffffff, #e5e5e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding-bottom: 0.5rem;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInPage 1.5s ease-out forwards;
-  background: none; /* Removed background */
+  animation: slideInWithFade 0.8s ease-out 0.5s forwards;
 }
 
-/* Centered Title */
-.home-page h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-
-  /* Smooth slide-down animation */
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDown 1s ease-out 0.3s forwards;
-  font-family: 'Times New Roman';
-  background: none; /* Removed background */
+/* Underline animation for heading */
+.home-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #00a8cc, transparent);
+  animation: expandLine 1s ease-out 1.3s forwards;
 }
 
-/* Bio Container - Centered on Screen, Left-Aligned Text */
+/* ===== BIO SECTION ===== */
 .bio-container {
   max-width: 800px;
   width: 100%;
-  text-align: left;
-  padding: 0 20px;
-
-  /* Smooth slide-in animation */
+  padding: 0 1.5rem;
   opacity: 0;
-  transform: translateX(-30px);
-  animation: slideInLeft 1s ease-out 0.6s forwards;
-  font-size: 1.2rem;
-  font-family: 'Times New Roman';
-  background: none; /* Removed background */
+  transform: translateY(20px);
+  animation: slideInWithFade 0.8s ease-out 0.7s forwards;
 }
 
-/* Paragraph Styling */
+/* Base font size for desktop/tablet */
 .bio-container p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  font-family: 'Times New Roman';
-  background: none; /* Removed background */
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
-/* Center the Button */
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 10px;
+/* Highlighted text within bio */
+.bio-container strong {
+  color: #f1f7fb;
+  position: relative;
+  display: inline-block;
+}
 
-  /* Smooth scaling animation */
+/* ===== SPECIAL CALL-TO-ACTION TEXT ===== */
+/* Base size for desktop/tablet */
+.bio-container .mt-2.fs-3 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  display: inline-block;
   opacity: 0;
-  transform: scale(0.8);
-  animation: scaleIn 1s ease-out 0.9s forwards;
-  font-family: 'Times New Roman';
-  background: none; /* Removed background */
+  transform: scale(0.95);
+  animation: popIn 0.6s ease-out 1s forwards;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Modern Button Styling */
+/* ===== BUTTON STYLES ===== */
+.button-container {
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInWithFade 0.8s ease-out 1.1s forwards;
+  margin-bottom: -60px;
+  margin-top: 10px;
+}
+
 .cta-button {
-  padding: 14px 28px;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: bold;
   background: linear-gradient(135deg, #00a8cc, #005f73);
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 10px rgba(0, 168, 204, 0.3);
-  font-family: 'Times New Roman';
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 168, 204, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Hover Effect */
-.cta-button:hover {
+/* Button hover effect with pseudo-element */
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(135deg, #005f73, #003845);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 6px 15px rgba(0, 95, 115, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 95, 115, 0.6);
 }
 
-/* Smooth Animations */
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.cta-button:hover::before {
+  opacity: 1;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Button click effect */
+.cta-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 95, 115, 0.8);
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ===== ANIMATIONS ===== */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  /* Mobile adjustments */
+@keyframes slideInWithFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+  to { width: 80%; }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+/* Large tablets and small desktops (992px and below) */
+@media (max-width: 992px) {
+  .home-page {
+    padding: 1.5rem;
+  }
+
+  /* Slightly reduce heading size for medium screens */
   .home-page h1 {
-    font-size: 0.5rem;
-    margin-top: 60px;
-    font-family: 'Times New Roman';
-    background: none; /* Removed background */
+    font-size: 2.5rem;
   }
-  .cta-button {
-    font-size: 0.5rem;
-    padding: 12px 24px;
-  }
-
-  /* Keep heading and button centered, left-align the rest */
+  
   .bio-container {
-    text-align: left;
-    font-family: 'Times New Roman';
-    font-size: 0.5rem;
-    background: none; /* Removed background */
+    padding: 0 1rem;
   }
 }
 
+/* Standard tablets (768px and below) */
+@media (max-width: 768px) {
+  .home-page {
+    margin-top: 60px;
+    padding: 1rem;
+  }
+  .button-container {
+    margin-bottom: -30px;
+    margin-top: 10px;
+  }
+  
+  /* Adjust heading underline for tablets */
+  .home-page h1::after {
+    height: 2px;
+  }
+  
+  /* Left-align text for better readability on tablets */
+  .bio-container p {
+    text-align: left;
+    font-size: 1.2rem; /* Slightly smaller for tablets */
+  }
+  
+  /* Keep CTA text centered */
+  .bio-container .mt-2.fs-3 {
+    font-size: 1.2rem; /* Match tablet size */
+  }
+}
+
+/* Small mobile devices (480px and below) */
 @media (max-width: 480px) {
+  .home-page {
+    margin-top: 50px;
+  }
+  
+  /* Significant size reduction for mobile */
   .home-page h1 {
     font-size: 2rem;
   }
+  
+  /* Adjust text sizes for mobile */
+  .bio-container p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* More spacing for mobile readability */
+    text-align: center;
+  }
+  
+  .bio-container .mt-2.fs-3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Smaller button padding for mobile */
   .cta-button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+  /* Further reduce sizes for very small screens */
+  .home-page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .bio-container p,
+  .bio-container .mt-2.fs-3 {
     font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 20px;
   }
 }

@@ -4,7 +4,6 @@
     min-height: 100vh;
     margin: auto;
     padding: 40px;
-    /* background: inherit; */
     border-radius: 12px;
     box-shadow: 0;
     margin-top: 70px;
@@ -12,16 +11,17 @@
     justify-content: center;
 }
 
-/* Section Title */
+/* Section Title - Responsive */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Desktop/tablet default */
     font-weight: bold;
     margin-bottom: 40px;
     color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman', serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Company Section */
@@ -40,9 +40,10 @@
 .company-name {
     font-size: 2rem;
     font-weight: bold;
-    color: white; /* Changed to white to match home */
+    color: white;
     margin-bottom: 10px;
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman', serif;
+    text-align: left;
 }
 
 /* Role */
@@ -51,7 +52,8 @@
     color: white;
     font-weight: 600;
     margin-bottom: 15px;
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman', serif;
+    text-align: left;
 }
 
 /* Projects List */
@@ -61,7 +63,7 @@
     gap: 20px;
 }
 
-/* Individual Project Card */
+/* Project Card */
 .project-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
@@ -69,13 +71,46 @@
     width: calc(50% - 10px);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    color: white; /* Changed to white */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Changed to white border */
-    font-family: 'Times New Roman';
-    font-size: 1.3rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Times New Roman', serif;
 }
 
-/* Project Status Styles */
+/* Project Title */
+.project-card h4 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Project Description Container */
+.project-description {
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.project-description p {
+    margin-bottom: 12px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+.project-description ul {
+    margin: 12px 0 12px 20px;
+    padding-left: 5px;
+    list-style-type: disc;
+}
+
+.project-description li {
+    margin-bottom: 8px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+/* Status Styles */
 .status {
     display: inline-block;
     padding: 6px 12px;
@@ -83,11 +118,10 @@
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
-    font-family: 'Times New Roman';
-    font-size: 1.2rem;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
 }
 
-/* Status Colors (kept as is for visibility) */
 .completed {
     background-color: #28a745;
     color: white;
@@ -103,8 +137,20 @@
     color: white;
 }
 
-/* Responsive Design (unchanged) */
-@media (max-width: 1024px) {
+/* Technologies text */
+.project-card > p {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+/* Large tablets (992px and below) */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
     .projects-container {
         padding: 30px;
     }
@@ -118,22 +164,14 @@
     }
 }
 
+/* Standard tablets (768px and below) */
 @media (max-width: 768px) {
-    .projects-container {
-        padding: 20px;
-    }
-
-    .projects-list {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .project-card {
-        width: 100%;
-    }
-
     .section-title {
         font-size: 2rem;
+    }
+    
+    .projects-container {
+        padding: 20px;
     }
 
     .company-name {
@@ -142,5 +180,61 @@
 
     .role {
         font-size: 1.1rem;
+    }
+}
+
+/* Mobile devices (768px and below - scrollable descriptions) */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+    }
+    
+    .project-description {
+        max-height: 150px;
+        overflow-y: auto;
+        padding-right: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,0.3) transparent;
+    }
+    
+    .project-description p {
+        text-align: left;
+        hyphens: none;
+    }
+    
+    .project-description::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .project-description::-webkit-scrollbar-thumb {
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 10px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+    
+    .project-description {
+        max-height: 120px;
+    }
+}
+
+/* Small mobile (360px and below) */
+@media (max-width: 360px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .project-description {
+        max-height: 100px;
+    }
+    
+    .project-card h4 {
+        font-size: 1.2rem;
     }
 }

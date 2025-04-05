@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import BioAndResume from '../../pages/Profile/profile'; // Import the BioAndResume component
 import Experience from '../../pages/Service/service';
+import Contact from '../../pages/Contact/contact';
+import Footer from '../../pages/Footer/footer';
 
 const Home = () => {
   return (
@@ -33,6 +35,8 @@ const Home = () => {
       <BioAndResume />
 
       <Experience />
+      <Contact />
+      <Footer />
     </div>
   );
 };

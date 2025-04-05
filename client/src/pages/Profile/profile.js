@@ -10,106 +10,107 @@ const BioAndResume = () => {
   return (
     <div className="container mt-3">
       <h2 className="section-title">Profile & Skills</h2>
-      <div className="row justify-content-center align-items-center d-flex flex-wrap">
-        
+      <div className="row justify-content-center">
         {/* Profile Card */}
-        <div className="col-md-5 col-12 mb-4 px-3 text-center">
+        <div className="col-lg-5 col-md-6 col-12 mb-4">
           <motion.div 
             onClick={() => setIsFlippedProfile(!isFlippedProfile)} 
             className="flip-card"
+            whileHover={{ scale: 1.02 }}
           >
             <motion.div 
               className="flip-card-inner" 
               animate={{ rotateY: isFlippedProfile ? 180 : 0 }}
               transition={{ duration: 0.6 }}
             >
-              {/* Front Side */}
-              <motion.div className="flip-card-front card">
-                <div className="card-body d-flex align-items-center justify-content-center">
-                  <p className="fs-4 text-white">Tap to See My Profile🔄</p>
-                </div>
-              </motion.div>
-
-              {/* Back Side - Profile Info */}
-              <motion.div className="flip-card-back card text-black">
-                <div className="card-body text-center">
+              <div className="flip-card-front">
+                <p>Tap to See My Profile 🔄</p>
+              </div>
+              <div className="flip-card-back">
+                <div className="d-flex flex-column align-items-center justify-content-center h-100">
                   <img
                     src="/profile.jpg"
                     alt="Profile"
-                    className="rounded-circle mx-auto d-block mt-2"
-                    style={{ width: "180px", height: "180px", objectFit: "cover", border: "3px solid white" }}
+                    className="profile-image"
                   />
-                  <h2 className="card-title mt-3">Mohammed Musharraf</h2>
-                  <h5 className="card-subtitle mt-3 mb-2 text-black">MERN Stack Developer</h5>
-                  <p className="text-black fs-5 mt-3">Xine Technology Solutions</p>
+                  <h3 className="card-title">Mohammed Musharraf</h3>
+                  <h5 className="card-subtitle">MERN Stack Developer</h5>
+                  <p className="text-muted">Xine Technology Solutions</p>
                 </div>
-              </motion.div>
-
+              </div>
             </motion.div>
           </motion.div>
         </div>
 
         {/* Skills Card */}
-        <div className="col-md-5 col-12 mb-4 px-3 text-center">
+        <div className="col-lg-5 col-md-6 col-12 mb-4">
           <motion.div 
             onClick={() => setIsFlippedSkills(!isFlippedSkills)} 
             className="flip-card"
+            whileHover={{ scale: 1.02 }}
           >
             <motion.div 
               className="flip-card-inner" 
               animate={{ rotateY: isFlippedSkills ? 180 : 0 }}
               transition={{ duration: 0.6 }}
             >
-              {/* Front Side */}
-              <motion.div className="flip-card-front">
-                <p className="fs-4 mt-5">Tap to See My Skills🔄</p>
-              </motion.div>
-
-              {/* Back Side - Skills Info */}
-              <motion.div className="flip-card-back">
-                <div className="card text-white">
-                  <div className="card-body text-center">
-                    <div className="text-start">
-                      <h6 className="mt-3 text-black fw-bold">Technical Skills</h6>
-                      <strong className="fw-normal text-black">MERN:</strong>
-                      <span className="badge bg-dark ms-2">MongoDB</span>
-                      <span className="badge bg-dark ms-2">Express.js</span>
-                      <span className="badge bg-dark ms-2">React.js</span>
-                      <span className="badge bg-dark ms-2">Node.js</span>
-
+              <div className="flip-card-front">
+                <p>Tap to See My Skills 🔄</p>
+              </div>
+              <div className="flip-card-back">
+                <div className="skills-container">          
+                  <div className="skills-category">
+                    <h6 className="fw-bold">Technical Skills</h6>
+                    <div className="mb-3">
+                      <strong>MERN:</strong>
                       <div className="mt-2">
-                        <strong className="fw-normal text-black">Databases:</strong>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#2c6e49" }}>MySQL</span>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#2c6e49" }}>MongoDB</span>
+                        <span className="badge bg-dark">MongoDB</span>
+                        <span className="badge bg-dark">Express.js</span>
+                        <span className="badge bg-dark">React.js</span>
+                        <span className="badge bg-dark">Node.js</span>
                       </div>
+                    </div>
 
+                    <div className="mb-3">
+                      <strong>Databases:</strong>
                       <div className="mt-2">
-                        <strong className="fw-normal text-black">Programming Languages:</strong>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#006494" }}>Java</span>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#006494" }}>JavaScript</span>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#006494" }}>Python</span>
+                        <span className="badge bg-success">MySQL</span>
+                        <span className="badge bg-success">MongoDB</span>
                       </div>
+                    </div>
 
+                    <div className="mb-3">
+                      <strong>Programming Languages:</strong>
                       <div className="mt-2">
-                        <strong className="fw-normal text-black">Data Visualization Tools:</strong>
-                        <span className="badge text-white ms-2" style={{ backgroundColor: "#ff9f1c" }}>Power BI</span>
+                        <span className="badge bg-primary">Java</span>
+                        <span className="badge bg-primary">JavaScript</span>
+                        <span className="badge bg-primary">Python</span>
                       </div>
+                    </div>
 
-                      <h6 className="mt-3 text-black fw-bold">Soft Skills</h6>
-                      <span className="badge text-white me-2" style={{ backgroundColor: "#2f4550" }}>Communication</span>
-                      <span className="badge text-white me-2" style={{ backgroundColor: "#2f4550" }}>Teamwork</span>
-                      <span className="badge text-white me-2" style={{ backgroundColor: "#2f4550" }}>Time Management</span>
-                      <span className="badge text-white me-2" style={{ backgroundColor: "#2f4550" }}>Adaptability</span>
-                      <span className="badge text-white" style={{ backgroundColor: "#2f4550" }}>Problem Solving</span>
+                    <div className="mb-3">
+                      <strong>Data Visualization Tools:</strong>
+                      <div className="mt-2">
+                        <span className="badge bg-warning text-dark">Power BI</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="skills-category">
+                    <h6 className="fw-bold">Soft Skills</h6>
+                    <div className="mt-2">
+                      <span className="badge bg-secondary">Communication</span>
+                      <span className="badge bg-secondary">Teamwork</span>
+                      <span className="badge bg-secondary">Time Management</span>
+                      <span className="badge bg-secondary">Adaptability</span>
+                      <span className="badge bg-secondary">Problem Solving</span>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-
+              </div>
             </motion.div>
           </motion.div>
         </div>
-
       </div>
     </div>
   );
