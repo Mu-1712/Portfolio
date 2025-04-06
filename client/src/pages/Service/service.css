@@ -111,6 +111,12 @@
     .role {
         font-size: clamp(0.5rem, 1vw, 0.6rem);
     }
+    .company-logo {
+        width: clamp(3rem, 8vw, 2rem); 
+        height: clamp(3rem, 8vw, 2rem);
+        object-fit: contain;
+        margin-right: 1rem;
+    }
 }
 
 /* Small Phones (360px and below) */
