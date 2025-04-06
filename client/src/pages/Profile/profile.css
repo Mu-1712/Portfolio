@@ -5,16 +5,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -180px;
+  margin: -1.9rem, 0;
 }
 
 /* Section Title - Default size for desktop (3rem) */
 .section-title {
-  font-size: 3rem; /* Default size for desktops */
+  font-size: 3rem;
   font-weight: bold;
   color: white;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   font-family: 'Times New Roman', serif;
 }
@@ -23,6 +23,7 @@
 .row.justify-content-center {
   gap: 2rem;
   justify-content: center !important;
+  margin: 0;
 }
 
 /* Flip Card Container */
@@ -30,6 +31,7 @@
   width: 100%;
   height: 350px;
   perspective: 1000px;
+  margin-bottom: 2rem;
 }
 
 /* Flip Card Inner */
@@ -77,6 +79,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
+  margin: 0;
 }
 
 /* Back Card Style */
@@ -100,13 +103,13 @@
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .card-subtitle {
   font-size: 1.2rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 
 /* Skills Card Specific Styles */
@@ -118,11 +121,11 @@
 }
 
 .skills-category {
-  margin-bottom: 0rem;
+  margin: 0 0 1rem 0;
 }
 
 .badge {
-  margin-right: 0.2rem;
+  margin: 0 0.2rem 0.2rem 0;
   font-weight: normal;
   font-size: 0.85rem;
 }
@@ -132,24 +135,23 @@
 /* Large tablets (992px and below) */
 @media (max-width: 992px) {
   .section-title {
-    font-size: 2.5rem; /* Slightly smaller for large tablets */
-    margin-bottom: 1.75rem;
+    font-size: 2.5rem;
+    margin: 1.75rem 0;
   }
   
   .flip-card {
     height: 300px;
   }
-  .container.mt-3 {   
-    margin-bottom: -180px;
+  .container.mt-3 {
+    margin-bottom: -220px;
   }
 }
 
 /* Standard tablets (768px and below) */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem; /* Medium size for tablets */
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin: 1.5rem 0;
   }
   
   .flip-card {
@@ -164,17 +166,15 @@
   .profile-image {
     width: 140px;
     height: 140px;
-  }
-  .container.mt-3 {   
-    margin-bottom: -80px;
+    margin: 0 auto 0.75rem;
   }
 }
 
 /* Mobile devices (480px and below) */
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.5rem; /* Smaller for mobile */
-    margin-bottom: 1.25rem;
+    font-size: 2rem;
+    margin: 1.5rem 0;
   }
   
   .flip-card {
@@ -192,16 +192,16 @@
   .card-subtitle {
     font-size: 1rem;
   }
-  .container.mt-3 {   
-    margin-bottom: -180px;
+  .container.mt-3 {
+    margin-bottom: -120px;
   }
 }
 
 /* Small mobile devices (360px and below) */
 @media (max-width: 360px) {
   .section-title {
-    font-size: 1.25rem; /* Smallest size for very small devices */
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin: 1rem 0;
   }
   
   .flip-card {
@@ -210,5 +210,10 @@
   
   .flip-card-front p {
     font-size: 1rem;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
   }
 }

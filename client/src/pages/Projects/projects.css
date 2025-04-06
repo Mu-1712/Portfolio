@@ -216,7 +216,8 @@
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.75rem;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        margin-top: 10px;
     }
     
     .project-description {

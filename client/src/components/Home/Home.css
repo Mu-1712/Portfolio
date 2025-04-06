@@ -76,12 +76,15 @@ body {
   animation: slideInWithFade 0.8s ease-out 0.7s forwards;
 }
 
-/* Base font size for desktop/tablet */
+/* Improved justified text with enhanced readability */
 .bio-container p {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
-  text-align: center;
-  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+  hyphens: auto;
+  word-spacing: -0.05em;
 }
 
 /* Highlighted text within bio */
@@ -222,22 +225,25 @@ body {
     height: 2px;
   }
   
-  /* Left-align text for better readability on tablets */
+  /* Justified text with mobile-friendly settings */
   .bio-container p {
-    text-align: left;
-    font-size: 1.2rem; /* Slightly smaller for tablets */
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    hyphens: manual;
+    word-spacing: normal;
   }
   
   /* Keep CTA text centered */
   .bio-container .mt-2.fs-3 {
-    font-size: 1.2rem; /* Match tablet size */
+    font-size: 1.2rem;
   }
 }
 
 /* Small mobile devices (480px and below) */
 @media (max-width: 480px) {
   .home-page {
-    margin-top: 50px;
+    margin-top: 70px;
   }
   
   /* Significant size reduction for mobile */
@@ -245,20 +251,25 @@ body {
     font-size: 2rem;
   }
   
-  /* Adjust text sizes for mobile */
+  /* Adjust text sizes for mobile with left alignment */
   .bio-container p {
-    font-size: 1.1rem;
-    line-height: 1.6; /* More spacing for mobile readability */
-    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    hyphens: none;
   }
   
   .bio-container .mt-2.fs-3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   /* Smaller button padding for mobile */
   .cta-button {
     padding: 0.8rem 1.5rem;
+  }
+  .button-container {
+    margin-bottom:-50px;
+    margin-top: 10px;
   }
 }
 

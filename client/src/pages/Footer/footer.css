@@ -3,7 +3,7 @@
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 3rem 0;
+    padding: 2rem 0;
     margin-top: 5rem;
     position: relative;
     overflow: hidden;
@@ -150,7 +150,7 @@
 @media (max-width: 30rem) {
     .footer {
         padding: 2rem 0;
-        margin-top: 3rem;
+        margin-top: 10px;
     }
     
     .footer-container {
@@ -168,10 +168,6 @@
     
     .footer-social {
         justify-content: center;
-    }
-    
-    .footer-bottom {
-        margin-top: 2rem;
     }
 }
 

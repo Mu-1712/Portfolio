@@ -25,9 +25,7 @@ const Experience = () => {
   return (
     <div className="experience-container">
       <p className="title">
-        <span style={{ color: "#ffff" }}>
           <strong>My Journey</strong>
-        </span>
       </p>
 
       {/* Timeline container remains for styling purposes */}
