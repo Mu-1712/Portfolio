@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import BioAndResume from '../../pages/Profile/profile';
 import Experience from '../../pages/Service/service';
 import Footer from '../../pages/Footer/footer';
 
 const Home = () => {
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleDownloadClick = () => {
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000); // Hide after 3s
+  };
+
   return (
     <div className="home-page">
-      {/* Centered Heading */}
       <h1>Hi, I'm Muhammad Musharraf</h1>
 
-      {/* Bio Container with improved text structure */}
       <div className="bio-container">
         <p>
           A passionate <strong>MERN Stack Developer</strong>. With a strong grasp of both{' '}
@@ -26,12 +31,19 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Center-Aligned Button */}
       <div className="button-container">
-        <button className="cta-button">Download My Resume</button>
+        <button className="cta-button" onClick={handleDownloadClick}>
+          Download My Resume
+        </button>
       </div>
 
-      {/* Profile and Skills Section */}
+      {/* Alert message */}
+      {showAlert && (
+        <div className="custom-alert">
+          📄 Resume will be added soon... kindly wait!
+        </div>
+      )}
+
       <BioAndResume />
       <Experience />
       <Footer />
