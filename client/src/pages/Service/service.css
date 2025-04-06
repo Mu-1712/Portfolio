@@ -2,24 +2,18 @@
 .experience-container { 
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 75rem; /* 1200px */
     margin: auto;
-    padding: 50px 0;
-    /* margin-bottom: -190px; */
+    padding: 3rem 0; /* 48px */
 }
 
 .title {
     text-align: center;
-    font-size: 3rem; /* Default for desktop */
-    font-weight: bold;
-    margin: 60px 0 50px;
-    color: #ffffff !important; /* Add !important to ensure it overrides any other styles */
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive scaling */
+    margin: 2rem 0 1rem; /* 32px 0 16px */
+    color: #ffffff;
     font-family: 'Times New Roman', serif;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.title strong {
-    color: inherit; /* This ensures the strong tag inherits the color */
 }
 
 /* TIMELINE */
@@ -28,18 +22,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-}
-
-/* TRACKING LINE */
-.tracking-line {
-    position: absolute;
-    width: 5px;
-    background-color: #007bff;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
+    gap: 1.5rem; /* 24px */
+    margin-top: 1rem;
 }
 
 /* EXPERIENCE BOX */
@@ -47,290 +31,112 @@
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+    padding: 1rem; /* 16px */
     width: 80%;
-    height: 200px;
-    border-radius: 12px;
+    min-height: 12.5rem; /* 200px */
+    border-radius: 0.75rem; /* 12px */
     border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-/* GLOW EFFECT */
-.experience-box::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 80%);
-    transition: all 0.4s ease-in-out;
+/* EXPERIENCE TEXT CONTENT */
+.experience-content {
+    flex: 1;
+    font-family: 'Times New Roman', serif;
+    font-size: clamp(0.875rem, 2vw, 1.1rem); /* Responsive base size */
+    line-height: 1.5;
 }
 
-.experience-box:hover::before {
-    top: 0;
-    left: 0;
+.company-name {
+    font-weight: bold;
+    color: #03045e;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive scaling */
+    margin-bottom: 0.5rem;
 }
 
-/* HOVER EFFECT */
-.experience-box:hover {
-    transform: scale(1.05);
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
+.role, 
+.duration, 
+.location {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+}
+
+.duration, 
+.location {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    opacity: 0.9;
 }
 
 /* COMPANY LOGO */
 .company-logo {
-    width: 120px;
-    height: 120px;
+    width: clamp(5rem, 15vw, 7.5rem); /* 80px-120px */
+    height: clamp(5rem, 15vw, 7.5rem);
     object-fit: contain;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
-/* EXPERIENCE DETAILS */
-.experience-details {
-    text-align: left;
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
 
-.experience-details .company-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #03045e;
-    font-family: 'Times New Roman', serif;
-}
-
-.experience-details .role {
-    font-size: 1.3rem;
-    color: #ffffff;
-    font-family: 'Times New Roman', serif;
-}
-
-.experience-details .duration,
-.experience-details .location {
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-family: 'Times New Roman', serif;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Large tablets (992px and below) */
-@media (max-width: 992px) {
-    .title {
-        font-size: 2.5rem;
-        margin: 50px 0 40px;
-    }
-    
-    .experience-box {
-        width: 85%;
-    }
-    
-    .company-logo {
-        width: 110px;
-        height: 110px;
-    }
-}
-
-/* Standard tablets (768px and below) */
-@media (max-width: 768px) {
-    .title {
-        font-size: 2.25rem;
-        margin: 40px 0 30px;
-    }
-    
-    .experience-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 70%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .company-logo {
-        width: 100px;
-        height: 100px;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .experience-details {
-        text-align: center;
-    }
-
-    .company-name {
-        font-size: 1.2rem;
-    }
-
-    .role {
-        font-size: 1rem;
-    }
-
-    .duration, .location {
-        font-size: 0.9rem;
-    }
-    .experience-container {
-        margin-bottom: 150px;
-        margin-top: 40px;
-    }
-}
-
-/* Large Phones (Most Poco Flagships) */
-@media (max-width: 428px) {  /* Covers 99% of Poco devices */
-    .title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-align: center;
-    }
-    
-    .experience-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 70%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .company-logo {
-        width: 80px;
-        height: 80px;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .experience-details {
-        text-align: center;
-    }
-
-    .company-name {
-        font-size: 0.8rem;
-    }
-
-    .role {
-        font-size: 0.6rem;
-    }
-
-    .duration, .location {
-        font-size: 0.5rem;
-    }
-    .experience-container {
-        margin-bottom: 150px;
-        margin-top: 40px;
-    }
-}
-
-/* Mobile devices (480px and below) */
-@media (max-width: 480px) {
-    .title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-align: center;
-    }
-    
+/* Tablets (768px and below) */
+@media (max-width: 48rem) {
     .experience-box {
         width: 90%;
-        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
     }
-
+    
     .company-logo {
-        width: 80px;
-        height: 80px;
-    }
-
-    .company-name {
-        font-size: 0.5rem;
-    }
-
-    .role {
-        font-size: 0.5rem;
-    }
-
-    .duration, .location {
-        font-size: 0.3rem;
-    }
-    .experience-container {
-        margin-top: 10px;
+        margin: 0 auto 1rem;
     }
 }
 
-/* Small mobile devices (360px and below) */
-@media (max-width: 360px) {
-    .title {
-        font-size: 1.25rem;
-        margin: 25px 0 15px;
-        text-align: center;
+/* Large Phones (428px and below - Poco devices) */
+@media (max-width: 26.75rem) { /* 428px */
+    .experience-content {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+    
+    .company-name {
+        font-size: clamp(0.6rem, 2vw, 0.8rem);
+    }
+    
+    .role {
+        font-size: clamp(0.5rem, 1vw, 0.6rem);
+    }
+}
+
+/* Small Phones (360px and below) */
+@media (max-width: 22.5rem) {
+    .experience-box {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .company-logo {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+/* Desktop Wide Layout */
+@media (min-width: 64rem) { /* 1024px */
+    .timeline {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
     }
     
     .experience-box {
-        width: 95%;
-    }
-
-    .company-logo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .company-name {
-        font-size: 0.75rem;
-    }
-
-    .role {
-        font-size: 0.6rem;
-    }
-
-    .duration, .location {
-        font-size: 0.5rem;
-    }
-    .experience-container {
-        margin-bottom: 40px;
-    }
-}
-
-/* Desktop - Wide Layout (1024px and above) */
-@media (min-width: 1024px) {
-    .title {
-        font-size: 3rem;
-        margin: 50px 0 25px;
-        text-align: center;
-    }
-    .timeline {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 40px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 20px;
-        padding-left: 60px; /* Added padding to move cards right */
-        margin-left: 30px; /* Additional margin for better alignment */
-    }
-
-    .experience-box {
         width: 45%;
-        min-width: 500px;
-        height: 220px;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-right: 20px; /* Added spacing between cards */
-    }
-
-    .experience-details {
-        padding-left: 20px;
-    }
-
-    /* Optional: Add some right padding to the container */
-    .experience-container {
-        padding-right: 30px;
-        margin-bottom: -60px;
+        min-width: 28rem;
     }
 }
