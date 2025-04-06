@@ -16,7 +16,7 @@ const Experience = () => {
       id: 2,
       company: "Mphasis Pvt Ltd",
       role: "Data Analyst",
-      duration: "Sep 2014 - Dec 2024",
+      duration: "Sep 2024 - Dec 2024",
       location: "Pune, Maharashtra, India",
       logo: "Mphasis.png",
     },
