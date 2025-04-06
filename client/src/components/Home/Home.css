@@ -240,12 +240,12 @@ body {
   }
   
   .bio-container p {
-    font-size: clamp(0.9rem, 4vw, 1rem);
-    line-height: 1.8;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    line-height: 1.5;
   }
   
   .bio-container .mt-2.fs-3 {
-    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
   }
   
   .cta-button {
