@@ -1,5 +1,4 @@
 /* ===== BASE STYLES ===== */
-/* Smooth scrolling and consistent sizing */
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -9,7 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-/* Gradient background with subtle animation */
 body {
   background: linear-gradient(-45deg, #0d3b66, #005f73, #00a8cc, #0d3b66);
   background-size: 400% 400%;
@@ -36,9 +34,8 @@ body {
 }
 
 /* ===== HEADING STYLES ===== */
-/* Main heading with modern text effect */
 .home-page h1 {
-  font-size: 3rem; /* Default size for desktops */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -53,7 +50,6 @@ body {
   animation: slideInWithFade 0.8s ease-out 0.5s forwards;
 }
 
-/* Underline animation for heading */
 .home-page h1::after {
   content: '';
   position: absolute;
@@ -66,7 +62,7 @@ body {
   animation: expandLine 1s ease-out 1.3s forwards;
 }
 
-/* ===== BIO SECTION ===== */
+/* ===== BIO SECTION - OPTIMIZED ===== */
 .bio-container {
   max-width: 800px;
   width: 100%;
@@ -76,38 +72,37 @@ body {
   animation: slideInWithFade 0.8s ease-out 0.7s forwards;
 }
 
-/* Improved justified text with enhanced readability */
 .bio-container p {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   margin-bottom: 1.5rem;
   text-align: justify;
   text-justify: inter-word;
-  line-height: 1.6;
+  line-height: 1.7;
   hyphens: auto;
-  word-spacing: -0.05em;
+  word-spacing: normal;
+  letter-spacing: 0.01em;
 }
 
-/* Highlighted text within bio */
 .bio-container strong {
   color: #f1f7fb;
   position: relative;
   display: inline-block;
 }
 
-/* ===== SPECIAL CALL-TO-ACTION TEXT ===== */
-/* Base size for desktop/tablet */
 .bio-container .mt-2.fs-3 {
   margin-top: 1.5rem;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   font-weight: bold;
   color: #ffffff;
   text-align: center;
+  text-justify: auto;
   position: relative;
   display: inline-block;
   opacity: 0;
   transform: scale(0.95);
   animation: popIn 0.6s ease-out 1s forwards;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.6;
 }
 
 /* ===== BUTTON STYLES ===== */
@@ -136,7 +131,6 @@ body {
   z-index: 1;
 }
 
-/* Button hover effect with pseudo-element */
 .cta-button::before {
   content: '';
   position: absolute;
@@ -159,7 +153,6 @@ body {
   opacity: 1;
 }
 
-/* Button click effect */
 .cta-button:active {
   transform: translateY(1px);
   box-shadow: 0 2px 10px rgba(0, 95, 115, 0.8);
@@ -192,14 +185,11 @@ body {
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
-
-/* Large tablets and small desktops (992px and below) */
 @media (max-width: 992px) {
   .home-page {
     padding: 1.5rem;
   }
-
-  /* Slightly reduce heading size for medium screens */
+  
   .home-page h1 {
     font-size: 2.5rem;
   }
@@ -207,81 +197,76 @@ body {
   .bio-container {
     padding: 0 1rem;
   }
+  
+  .bio-container p {
+    line-height: 1.7;
+  }
 }
 
-/* Standard tablets (768px and below) */
 @media (max-width: 768px) {
   .home-page {
     margin-top: 60px;
     padding: 1rem;
   }
+  
   .button-container {
     margin-bottom: -30px;
     margin-top: 10px;
   }
   
-  /* Adjust heading underline for tablets */
   .home-page h1::after {
     height: 2px;
   }
   
-  /* Justified text with mobile-friendly settings */
   .bio-container p {
-    text-align: justify;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    hyphens: manual;
-    word-spacing: normal;
+    text-align: left;
+    hyphens: none;
+    font-size: clamp(1rem, 3vw, 1.2rem);
   }
   
-  /* Keep CTA text centered */
   .bio-container .mt-2.fs-3 {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    text-align: center;
   }
 }
 
-/* Small mobile devices (480px and below) */
 @media (max-width: 480px) {
   .home-page {
     margin-top: 70px;
   }
   
-  /* Significant size reduction for mobile */
   .home-page h1 {
     font-size: 2rem;
   }
   
-  /* Adjust text sizes for mobile with left alignment */
   .bio-container p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: left;
-    hyphens: none;
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    line-height: 1.8;
   }
   
   .bio-container .mt-2.fs-3 {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
   }
   
-  /* Smaller button padding for mobile */
   .cta-button {
     padding: 0.8rem 1.5rem;
   }
+  
   .button-container {
-    margin-bottom:-50px;
-    margin-top: 10px;
+    margin-bottom: -50px;
   }
 }
 
-/* Extra small devices (360px and below) */
 @media (max-width: 360px) {
-  /* Further reduce sizes for very small screens */
   .home-page h1 {
     font-size: 1.8rem;
   }
   
-  .bio-container p,
+  .bio-container p {
+    font-size: clamp(0.85rem, 4vw, 0.95rem);
+  }
+  
   .bio-container .mt-2.fs-3 {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 4vw, 1rem);
   }
 }
