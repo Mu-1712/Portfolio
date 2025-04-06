@@ -101,7 +101,7 @@
 /* Large Phones (428px and below - Poco devices) */
 @media (max-width: 26.75rem) { /* 428px */
     .experience-content {
-        font-size: clamp(0.8rem, 3vw, 1rem);
+        font-size: clamp(0.8rem, 3.5vw, 1rem);
     }
     
     .company-name {
@@ -110,12 +110,6 @@
     
     .role {
         font-size: clamp(0.5rem, 1vw, 0.6rem);
-    }
-    .company-logo {
-        width: clamp(3rem, 8vw, 2rem); 
-        height: clamp(3rem, 8vw, 2rem);
-        object-fit: contain;
-        margin-right: 1rem;
     }
 }
 
